@@ -15,20 +15,20 @@ const machines = [
   {
     name: "mine",
     src: "./mine.png",
-    description: "Kopalnia zapewnia 5 ciastek na sekundę",
+    description: "Kopalnia zapewnia 10 ciastek na sekundę",
   },
   {
     name: "factory",
     src: "./factory.png",
-    description: "Fabryka zapewnia 10 ciastek na sekundę",
+    description: "Fabryka zapewnia 100 ciastek na sekundę",
   },
 ];
 
 const Shop = () => {
   return (
-    <div className="shop">
+    <div className="shop mt-3">
       {machines.map((machine) => (
-        <ShopItem name={machine.name} src={machine.src} description={machine.description} />
+        <ShopItem key={machine.name} name={machine.name} src={machine.src} description={machine.description} />
       ))}
     </div>
   );

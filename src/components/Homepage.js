@@ -7,7 +7,6 @@ const Homepage = () => {
     <div>
       <div className="hello">
         <Cookie />
-        <Status />
       </div>
     </div>
   );

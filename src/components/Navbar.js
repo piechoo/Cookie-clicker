@@ -7,21 +7,16 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const reset = useCallback(() => dispatch({ type: RESET_COOKIE }), [dispatch]);
   return (
-    <div className="main">
+    <div className="topbar">
       <nav className="navbar navbar-dark bg-warning">
         <div className="container-fluid">
           <div className="navbar-header">
-            <NavLink to="/" className="navbar-brand">
+            <NavLink to="/home" className="navbar-brand">
               <b>Strona Główna</b>
             </NavLink>
           </div>
 
           <ul className="nav navbar-nav navbar-right">
-            <li>
-              <button onClick={reset} className="navbar-brand button-nobackground">
-                <b>Wyzeruj licznik</b>
-              </button>
-            </li>
             <li>
               <NavLink to="/shop" className="navbar-brand">
                 <b>Sklep</b>

@@ -1,13 +1,30 @@
-import React, { useCallback } from "react";
-import { useDispatch } from "react-redux";
-import { ADD_COOKIE } from "../redux/actionTypes";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCookies, updateClicks } from "../redux/actions";
+import { getClicks } from "../redux/selectors";
+
 const Cookie = () => {
   const dispatch = useDispatch();
-  const incrementCounter = useCallback(() => dispatch({ type: ADD_COOKIE }), [dispatch]);
-  return (
-    <button className="cookie" onClick={incrementCounter}>
-      <img src={"./cookie.png"} />
-    </button>
-  );
+  const [clicks, setClicks] = useState(0);
+  const clicksPerSecond = useSelector(getClicks);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setClicks(0);
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  useEffect(() => {
+    if (clicks > clicksPerSecond) dispatch(updateClicks(clicks));
+  }, [clicksPerSecond, clicks]);
+
+  const incrementCounter = () => {
+    dispatch(addCookies(1));
+    const actClicks = clicks;
+    setClicks(actClicks + 1);
+  };
+  return <img src={"./cookie.png"} className="cookie mt-3" onClick={incrementCounter} />;
 };
 export default Cookie;

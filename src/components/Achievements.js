@@ -1,11 +1,31 @@
 import React from "react";
+import AchievementItem from "./AchievementItem";
+
+const achievements = [
+  {
+    name: "firstHundred",
+    description: "Zdobyłeś pierwsze 100 ciastek!",
+  },
+  {
+    name: "grandmaHolik",
+    description: "Masz 10 lub więcej babci. WOW ale duża rodzina !",
+  },
+  {
+    name: "firstMilion",
+    description: '"Chciałbym kiedyś zrobić sześć zer ..."  Ty już je zrobiłeś!',
+  },
+  {
+    name: "fastClicker",
+    description: "Udało ci się kliknąć 8 razy na sekundę! Ciekawe czy we wszsytkim jesteś tak szybki... ",
+  },
+];
 
 const Achievements = () => {
   return (
-    <div>
-      <div className="hello">
-        <h1 className="text-danger text-center">Tutaj będą osiągnięcia</h1>
-      </div>
+    <div className="shop mt-3">
+      {achievements.map((achievement) => (
+        <AchievementItem key={achievement.name} name={achievement.name} description={achievement.description} />
+      ))}
     </div>
   );
 };
