@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCookies, updateClicks } from "../redux/actions";
-import { getClicks } from "../redux/selectors";
+import { addCookies, updateClicks } from "../../redux/actions";
+import { getClicks } from "../../redux/selectors";
+
+import "./cookie.css";
 
 const Cookie = () => {
   const dispatch = useDispatch();

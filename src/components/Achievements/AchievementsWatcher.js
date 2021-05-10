@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAchievements, getClicks, getCookies, getMachines } from "../redux/selectors";
+import { getAchievements, getClicks, getCookies, getMachines } from "../../redux/selectors";
 
-import { addAchievement } from "../redux/actions";
+import { addAchievement } from "../../redux/actions";
 import AchievementNotification from "./AchievementNotification";
 
 const AchievementsWatcher = () => {

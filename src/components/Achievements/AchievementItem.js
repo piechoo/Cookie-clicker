@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getAchievements } from "../redux/selectors";
+import { getAchievements } from "../../redux/selectors";
 
 const AchievementItem = (props) => {
   const actualAchievements = useSelector(getAchievements);

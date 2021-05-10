@@ -1,5 +1,6 @@
 import React from "react";
 import AchievementItem from "./AchievementItem";
+import "./achievements.css";
 
 const achievements = [
   {
@@ -22,7 +23,7 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <div className="shop mt-3">
+    <div className="achievements--list mt-3">
       {achievements.map((achievement) => (
         <AchievementItem key={achievement.name} name={achievement.name} description={achievement.description} />
       ))}

@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getClicks, getCookies, getLevel, getMachines } from "../redux/selectors";
-import { resetCookie, resetUser, addCookies, updateLevel } from "../redux/actions";
+import { getClicks, getCookies, getLevel, getMachines } from "../../redux/selectors";
+import { resetCookie, resetUser, addCookies, updateLevel } from "../../redux/actions";
+import "./status.css";
 
 const Status = () => {
   const cookie = useSelector(getCookies);
@@ -80,7 +81,7 @@ const Status = () => {
   return (
     <div className="status">
       <h2 className="text-center">
-        Ciastka: <h1 className=" text-warning text-center">{cookie}</h1>
+        Ciastka: <p className="cookie-counter text-warning text-center">{cookie}</p>
       </h2>
       <h4>
         Poziom: <span className=" text-warning number">{level}</span>

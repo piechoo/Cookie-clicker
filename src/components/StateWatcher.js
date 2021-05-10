@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getCookie, getUser } from "../redux/selectors";
-import { postCookieState, postUserState } from "../utils/apiComunication";
+import { postCookieState, postUserState } from "../utils/apiComunicationUtils";
 import { getCookieStorage, getUserStorage, setCookieStorage, setUserStorage } from "../utils/storageUtils";
 
 const StateWatcher = () => {

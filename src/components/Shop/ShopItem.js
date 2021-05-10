@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { buyMachine } from "../redux/actions";
-import { getCookies, getLevel, getMachines } from "../redux/selectors";
-import { cost, requirement } from "../utils/cookieUtils";
+import { buyMachine } from "../../redux/actions";
+import { getCookies, getLevel, getMachines } from "../../redux/selectors";
+import { cost, requirement } from "../../utils/cookieUtils";
 
 const ShopItem = (props) => {
   const dispatch = useDispatch();

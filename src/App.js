@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Achievements from "./components/Achievements";
-import Shop from "./components/Shop";
+import Achievements from "./components/Achievements/Achievements";
+import Shop from "./components/Shop/Shop";
 import Homepage from "./components/Homepage";
-import Status from "./components/Status";
+import Status from "./components/Status/Status";
 
-import "./styles.css";
-import AchievementsWatcher from "./components/AchievementsWatcher";
+import "./app.css";
+import AchievementsWatcher from "./components/Achievements/AchievementsWatcher";
 import StateWatcher from "./components/StateWatcher";
 
 const App = () => {

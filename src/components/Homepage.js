@@ -1,11 +1,11 @@
 import React from "react";
-import Cookie from "./Cookie";
-import Status from "./Status";
+import Cookie from "./Cookie/Cookie";
+import Status from "./Status/Status";
 
 const Homepage = () => {
   return (
     <div>
-      <div className="hello">
+      <div className="homepage">
         <Cookie />
       </div>
     </div>
