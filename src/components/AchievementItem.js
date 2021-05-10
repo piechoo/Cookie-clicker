@@ -7,7 +7,7 @@ const AchievementItem = (props) => {
   return (
     <div className={!actualAchievements[props.name] ? "achievement--disabled" : "achievement--enabled"}>
       <div className="achievement text-center">
-        <h2 className="">{props.description}</h2>
+        <p className="">{props.description}</p>
       </div>
     </div>
   );

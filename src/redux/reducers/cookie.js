@@ -1,7 +1,7 @@
-import { ADD_COOKIES, BUY_MACHINE, RESET_COOKIE } from "../actionTypes";
+import { ADD_COOKIES, BUY_MACHINE, RESET_COOKIE, SET_COOKIE } from "../actionTypes";
 import { cost } from "../../utils/cookieUtils";
 
-const initialState = {
+export const resetCookieState = {
   cookies: 0,
   machines: {
     cursor: 0,
@@ -11,8 +11,16 @@ const initialState = {
   },
 };
 
+const initialState = JSON.parse(localStorage.getItem("cookie"))
+  ? JSON.parse(localStorage.getItem("cookie"))
+  : resetCookieState;
+
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_COOKIE: {
+      const cookieState = action.payload;
+      return cookieState;
+    }
     case ADD_COOKIES: {
       const number = action.payload;
       return {
@@ -32,7 +40,7 @@ export default function (state = initialState, action) {
       };
     }
     case RESET_COOKIE: {
-      return initialState;
+      return resetCookieState;
     }
     default:
       return state;

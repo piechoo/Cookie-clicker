@@ -15,7 +15,9 @@ const AchievementNotification = (props) => {
   return (
     <div className="notification">
       {isOn ? (
-        <h2 className="text-center text-warning notification__text">Otrzymałeś osiągnięcie {props.name}!</h2>
+        <p className="text-center text-warning notification__text">
+          Otrzymałeś osiągnięcie <b>{props.name}!</b>
+        </p>
       ) : null}
     </div>
   );

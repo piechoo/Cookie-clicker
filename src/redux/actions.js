@@ -6,6 +6,8 @@ import {
   BUY_MACHINE,
   RESET_COOKIE,
   UPDATE_CLICKS,
+  SET_COOKIE,
+  SET_USER,
 } from "./actionTypes";
 
 export const updateLevel = (number) => {
@@ -23,6 +25,10 @@ export const resetUser = () => {
   return { type: RESET_USER };
 };
 
+export const setUser = (user) => {
+  return { type: SET_USER, payload: user };
+};
+
 export const addCookies = (number) => {
   return { type: ADD_COOKIES, payload: number };
 };
@@ -33,4 +39,8 @@ export const buyMachine = (name) => {
 
 export const resetCookie = () => {
   return { type: RESET_COOKIE };
+};
+
+export const setCookie = (cookie) => {
+  return { type: SET_COOKIE, payload: cookie };
 };

@@ -118,10 +118,15 @@
 }
 
 .achievement {
+  font-size: 140%;
   height: 130px;
   width: 500px;
-  padding: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .achievement--disabled {
@@ -160,6 +165,7 @@
 }
 .notification__text {
   animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-size: 120%;
 }
 
 @media (max-width: 1025px) {
@@ -194,7 +200,7 @@
     text-align: center;
   }
   .machine__img {
-    width: 40%;
+    height: 40%;
     max-height: 50%;
   }
 
@@ -203,9 +209,8 @@
     width: 80vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    text-align: center;
   }
   .achievement--disabled,
   .achievement--enabled {

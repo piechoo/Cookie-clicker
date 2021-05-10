@@ -1,6 +1,6 @@
-import { UPDATE_LEVEL, ADD_ACHIEVEMENT, RESET_USER, UPDATE_CLICKS } from "../actionTypes";
+import { UPDATE_LEVEL, ADD_ACHIEVEMENT, RESET_USER, UPDATE_CLICKS, SET_USER } from "../actionTypes";
 
-const initialState = {
+export const resetUserState = {
   level: 1,
   achievements: {
     firstHundred: false,
@@ -11,8 +11,16 @@ const initialState = {
   clicksPerSecond: 0,
 };
 
+const initialState = JSON.parse(localStorage.getItem("user"))
+  ? JSON.parse(localStorage.getItem("user"))
+  : resetUserState;
+
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_USER: {
+      const userState = action.payload;
+      return userState;
+    }
     case UPDATE_LEVEL: {
       const number = action.payload;
       return {
@@ -38,7 +46,7 @@ export default function (state = initialState, action) {
       };
     }
     case RESET_USER: {
-      return initialState;
+      return resetUserState;
     }
     default:
       return state;
