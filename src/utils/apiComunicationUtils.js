@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //PATCH z zadania
-export const patchCounter = async (counter, host) => {
+export const patchCounterState = async (counter, host) => {
   const res = await axios.patch(`${host}/api/v1/progress`, { click_count: counter });
   return res;
 };
